@@ -31,7 +31,6 @@ function renderImages(){
         let strHTML = ''
     gMemeImgs.forEach(image => strHTML+=`<img class="meme-image" id="${image.id}" src="./${image.url}" onclick="chosenImg(event)">`)
         elGallery.innerHTML = strHTML
-        console.log(strHTML)
     }
 }
 

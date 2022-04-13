@@ -1,5 +1,6 @@
 'use strict'
-var gMeme = []
+var gText = []
+var textLine = false
 function drawImg(src){
     var img = new Image()
     img.src = src
@@ -7,14 +8,23 @@ function drawImg(src){
 }
 
 function drawText(txt,x,y){
-    var txt = document.querySelector('input')
+    textLine = true
     gCtx.textBaseline = "middle"
-    gCtx.font = "50px ariel"
-    gCtx.strokeText(txt,50,50)
-}
+    gCtx.font = "60px impact"
+    gCtx.textAlign = 'center';
+    gCtx.fillStyle = 'white';
+    gCtx.fillText(txt, x, y);
+    gCtx.strokeStyle = 'white'
+    gCtx.strokeText(txt,x,y)
+    console.log('list', gText)
+    
 
+}
 function onSubmitText(){
-    var text = document.querySelector('input')
+    var text = document.querySelector(`input`).value
     if(!text) return
-    console.log('text', text)
+    gText.push(text)
+    drawText(gText[0],gElCanvas.width/2,50)
+    drawText(gText[1],gElCanvas.width/2,gElCanvas.height - 50)
+    // drawText(gText[2],gElCanvas.width/2,gElCanvas.height/2)
 }
