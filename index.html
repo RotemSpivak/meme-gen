@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/gallery.css">
+    <title>Meme Gen</title>
+</head>
+<body onload="init()">
+    <header class="header-container">
+        <img src="./img/logo.png">
+        <h2 class="header-content">Gallery</h2>
+    </header>
+    <div class="gallery-container">
+        <div class="gallery">
+
+        </div>
+    </div>
+
+    <div class="meme-editor-container" style="display:none">
+        <canvas id="canvas" width="500" height="500"></canvas>
+        <div class="control-box">
+            <div class="text-container">
+                <input type="txt" class="text-line" placeholder="Enter text">
+                <input type="submit" value="Submit" onclick="onSubmitText()">
+                <button class="upDownText" onclick="upText()">↑</button>
+                <button class="upDownText" onclick="downText()">↓</button>
+                <button class="swicthText" onclick="switchText()">⇕</button>
+                <button class="addTextLine" onclick="addTextLine()">➕</button>
+                <button class="removeTextLine" onclick="removeTextLine()">➖</button>
+            </div>
+
+        </div>
+    </div>
+    <script src="./js/services/canvas-service.js"></script>
+    <script src="./js/services/gallery-service.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

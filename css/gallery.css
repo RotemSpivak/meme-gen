@@ -1,0 +1,31 @@
+
+.control-box {
+    height: 450px;
+    width: 400px;
+    float: right;
+    margin-right: 100px;
+    border: 2px solid grey;
+}
+
+.text-line {
+    height: 20px;
+    width: 95%;
+    margin: 5px;
+}
+header, h2 {
+    height: 10vh;
+    margin-bottom: 100px;
+}
+
+.gallery{
+    height: 450px;
+    width: 1000px;
+    border: 2px solid black;
+    margin: auto;
+}
+
+.meme-image{
+    height: 130px;
+    margin: 5px;
+    cursor: pointer;
+}
