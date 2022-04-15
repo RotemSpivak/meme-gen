@@ -1,8 +1,8 @@
 'use strict'
-
+let gCurrImg
 const elGallery = document.querySelector('.gallery')
 const elCanvasContainer = document.querySelector('.meme-editor-container')
-const gMemeImgs = [
+var gImgs = [
     {id:1, url:'img/1.jpg', keywords:['politics', 'funny', 'famous']},
     {id:3, url:'img/3.jpg', keywords:['dog', 'baby', 'cute', 'animal', 'child']},
     {id:4, url:'img/4.jpg', keywords:['cat', 'cute', 'animal',]},
@@ -24,23 +24,51 @@ const gMemeImgs = [
     {id:20, url:'img/20.jpg', keywords:['cat', 'animal','funny']},
     {id:21, url:'img/21.jpg', keywords:['cat', 'animal','funny']},
     {id:22, url:'img/22.jpg', keywords:['cat', 'animal','funny']},
+    {id:23, url:'img/23.jpg', keywords:['cat', 'animal','funny']},
+    {id:24, url:'img/24.jpg', keywords:['cat', 'animal','funny']},
+    {id:25, url:'img/25.jpg', keywords:['cat', 'animal','funny']},
 ]
 
-function renderImages(){
-    if(gMemeImgs){
+
+function renderImages(imgs){
+    if(imgs){
         let strHTML = ''
-    gMemeImgs.forEach(image => strHTML+=`<img class="meme-image" id="${image.id}" src="./${image.url}" onclick="chosenImg(event)">`)
+        imgs.forEach(image => strHTML+=`<img class="meme-image" id="${image.id}" src="./${image.url}" onclick="chosenImg(event)">`)
         elGallery.innerHTML = strHTML
     }
 }
 
 function chosenImg(event){
+    var id = event.target.id
+    gMeme = createMeme(id, '')
     var src = event.target.src
+    var elSearch = document.querySelector('.search')
+    elSearch.style.display = "none"
     elGallery.style.display = "none"
-    elCanvasContainer.style.display = "block"
+    elCanvasContainer.style.display = "flex"
     drawImg(src)
+    return gCurrImg = event
 }
 
-  
+function goToGallery(){
+    var elSearch = document.querySelector('.search')
+    elGallery.style.display = "block"
+    elCanvasContainer.style.display = "none"
+    elSearch.style.display = "block"
+}
 
-
+function onSearch(event) {
+    const text = event.target.value
+    if(!text) {
+        renderImages(gImgs)
+        return
+    } 
+    var searchedImgs = gImgs.filter(img => {
+        let match = false
+        img.keywords.forEach(keyword => {
+            if (keyword.includes(text)) match = true
+        })
+        return match
+    })
+    renderImages(searchedImgs)
+}

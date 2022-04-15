@@ -9,12 +9,12 @@
 </head>
 <body onload="init()">
     <header class="header-container">
-        <img src="./img/logo.png">
-        <h2 class="header-content">Gallery</h2>
+        <img class="logo" src="./img/icons/logo.png">
+        <h2 class="header-content" onclick="goToGallery()">Gallery</h2>
     </header>
     <div class="gallery-container">
+        <input class="search" type="search" placeholder="Search Images" oninput="onSearch(event)">
         <div class="gallery">
-
         </div>
     </div>
 
@@ -22,19 +22,52 @@
         <canvas id="canvas" width="500" height="500"></canvas>
         <div class="control-box">
             <div class="text-container">
-                <input type="txt" class="text-line" placeholder="Enter text">
-                <input type="submit" value="Submit" onclick="onSubmitText()">
-                <button class="upDownText" onclick="upText()">↑</button>
-                <button class="upDownText" onclick="downText()">↓</button>
-                <button class="swicthText" onclick="switchText()">⇕</button>
-                <button class="addTextLine" onclick="addTextLine()">➕</button>
-                <button class="removeTextLine" onclick="removeTextLine()">➖</button>
+                <input type="txt" class="text-line" placeholder="Enter text" name="meme-text" onchange="onSubmitText(event)" >
+                <div class="first-btn-container">
+                    <button class="upDownText" onclick="moveText(-5)">↑</button>
+                    <button class="upDownText" onclick="moveText(5)">↓</button>
+                    <button class="switchLine" onclick="onSwitchLine()">⇕</button>
+                    <button class="onAddLine" onclick="onAddLine(event)">➕</button>
+                    <button class="deleteTextLine" onclick="deleteTextLine()">🗑️</button>
+                </div>
+
+                <div class="color-container">
+                    <label for="fillColor">Fill Color:</label>
+                    <input type="color" id="fillColor" name="fillColor" oninput="onColorChange(event)"
+                    value="#121212"/>
+                    <label for="strokeColor">Stroke Color:</label>
+                    <input type="color" id="strokeColor" name="strokeColor" oninput="onStrokeChange(event)"
+                    value="#121212"/>
+                </div>
+                <div class="size-btns">
+                    <button class="sizeUp" onclick="onSizeChange(5)">A+</button>
+                    <button class="sizedown" onclick="onSizeChange(-5)">A-</button>
+                </div>
+                <!-- <button class="alignRight" onclick="onAlignRight()">
+                    <img class="icons" src="./img/icons/align-left.png"/>
+                </button>
+                <button class="alignCenter" onclick="onAlignCenter()">
+                    <img class="icons" src="./img/icons/align-center.png"/>
+                </button>
+                <button class="alignRight" onclick="onAlignRight()">
+                    <img class="icons" src="./img/icons/align-right.png"/>
+                </button> -->
+                <div class="download">
+                    <a href="#" onclick="downloadCanvas(this)" download="meme.jpg">Download</a>
+                </div>
+                    
+
+                
             </div>
 
         </div>
     </div>
-    <script src="./js/services/canvas-service.js"></script>
+
+    <script src="./js/services/download-service.js"></script>
     <script src="./js/services/gallery-service.js"></script>
+    <script src="./js/services/meme-service.js"></script>
+    <script src="./js/controller/meme-controller.js"></script>
+    <script src="./js/services/canvas-service.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>

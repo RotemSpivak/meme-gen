@@ -5,5 +5,11 @@ var gCtx;
 function init(){
     gElCanvas = document.querySelector('#canvas');
     gCtx = gElCanvas.getContext('2d');
-    renderImages(gMemeImgs)
+    renderImages(gImgs)
 }
+
+function onSwitchLine(){
+    switchLine()
+    renderImages(gImgs)
+}
+
