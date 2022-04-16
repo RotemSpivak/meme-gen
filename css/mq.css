@@ -1,0 +1,46 @@
+@media (max-width: 450px){
+    .meme-editor-container {
+        display:flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+    .gallery {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        width: auto;
+        padding: 8px;
+    }
+    .control-box {
+        width: 80%;
+        margin: 0 20px;
+    }
+    header{
+        display: flex;
+        align-items: center;
+        height: 12.5vh;
+        margin-bottom: 20px;
+        background-color: black;
+        color: white;
+        justify-content: space-between;
+    }
+    .meme-image {
+        width: 100%;        
+        height: auto;
+        object-fit: cover;
+        margin: 0;
+        margin-bottom: 8px;
+
+    }
+    canvas {
+        height: 400px;
+        margin-bottom: 10px;
+    }
+    .logo {
+        align-items: center;
+        height: 4vh;
+    }
+}

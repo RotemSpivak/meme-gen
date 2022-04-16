@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/mq.css">
     <title>Meme Gen</title>
 </head>
 <body onload="init()">
@@ -24,10 +25,10 @@
             <div class="text-container">
                 <input type="txt" class="text-line" placeholder="Enter text" name="meme-text" onchange="onSubmitText(event)" >
                 <div class="first-btn-container">
+                    <button class="onAddLine" onclick="onAddLine(event)">➕</button>
+                    <button class="switchLine" onclick="onSwitchLine()">⇕</button>
                     <button class="upDownText" onclick="moveText(-5)">↑</button>
                     <button class="upDownText" onclick="moveText(5)">↓</button>
-                    <button class="switchLine" onclick="onSwitchLine()">⇕</button>
-                    <button class="onAddLine" onclick="onAddLine(event)">➕</button>
                     <button class="deleteTextLine" onclick="deleteTextLine()">🗑️</button>
                 </div>
 

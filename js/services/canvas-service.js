@@ -125,6 +125,5 @@ function rerenderCanvas() {
     clearCanvas()
     const imgIdx = gImgs.findIndex(img => img.id === +gMeme.selectedImgId)
     drawImg(gImgs[imgIdx].url)
-    // drawRect(idx)
     redrawText()
 }

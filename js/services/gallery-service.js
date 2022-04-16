@@ -4,7 +4,7 @@ const elGallery = document.querySelector('.gallery')
 const elCanvasContainer = document.querySelector('.meme-editor-container')
 var gImgs = [
     {id:1, url:'img/1.jpg', keywords:['politics', 'funny', 'famous']},
-    {id:3, url:'img/3.jpg', keywords:['dog', 'baby', 'cute', 'animal', 'child']},
+    {id:3, url:'img/3.jpg', keywords:['dog', 'cute', 'animal']},
     {id:4, url:'img/4.jpg', keywords:['cat', 'cute', 'animal',]},
     {id:5, url:'img/5.jpg', keywords:['child', 'cute', 'funny']},
     {id:6, url:'img/6.jpg', keywords:['movie', 'celebrity', 'tv']},
@@ -12,12 +12,12 @@ var gImgs = [
     {id:8, url:'img/8.jpg', keywords:['movie', 'celebrity', 'tv']},
     {id:9, url:'img/9.jpg', keywords:['baby', 'cute', 'funny', 'child']},
     {id:10, url:'img/10.jpg', keywords:['politics', 'famous', 'funny']},
-    {id:11, url:'img/11.jpg', keywords:['sports', 'funny']},
-    {id:12, url:'img/12.jpg', keywords:['tv', 'famous']},
-    {id:13, url:'img/13.jpg', keywords:['movie', 'celebrity', 'famous', 'tv']},
+    {id:11, url:'img/11.jpg', keywords:['dog', 'funny', 'animal']},
+    {id:12, url:'img/12.jpg', keywords:['cat', 'animal', 'sad']},
+    {id:13, url:'img/13.jpg', keywords:['cat', 'funny', 'angry', 'animal']},
     {id:14, url:'img/14.jpg', keywords:['movie', 'celebrity', 'tv']},
-    {id:15, url:'img/15.jpg', keywords:['movie', 'celebrity', 'famous', 'tv']},
-    {id:16, url:'img/16.jpg', keywords:['movie', 'celebrity','famous', 'tv']},
+    {id:15, url:'img/15.jpg', keywords:['animal', 'funnylebrity']},
+    {id:16, url:'img/16.jpg', keywords:['cat', 'sad','funny', 'animal']},
     {id:17, url:'img/17.jpg', keywords:['politics', 'famous']},
     {id:18, url:'img/18.jpg', keywords:['animation', 'movie']},
     {id:19, url:'img/19.jpg', keywords:['dog', 'animal','funny']},
@@ -66,7 +66,7 @@ function onSearch(event) {
     var searchedImgs = gImgs.filter(img => {
         let match = false
         img.keywords.forEach(keyword => {
-            if (keyword.includes(text)) match = true
+            if (keyword.includes(text.toLowerCase())) match = true
         })
         return match
     })

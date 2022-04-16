@@ -46,6 +46,7 @@ header h2{
 .gallery{
     height: 650px;
     width: 1000px;
+    padding: 25px 0 25px 35px;
     border: 2px solid black;
     margin: auto;
     background-color: white;
@@ -58,7 +59,6 @@ header h2{
 
 .meme-image{
     height: 130px;
-    margin: 5px;
     cursor: pointer;
     margin: 15px;
 }
@@ -138,11 +138,15 @@ footer {
     margin-top: 10px;
     flex-direction: row;
     letter-spacing: 1px;
-
+    bottom: 0;
 
 }
 
 footer a {
     color: rgb(113, 216, 251);
     margin-left: 5px;
+}
+
+canvas {
+    margin-bottom: 38px;
 }
